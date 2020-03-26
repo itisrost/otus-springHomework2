@@ -1,0 +1,12 @@
+application:
+  score-to-pass: 3
+
+  questions-file:
+      name: questions
+      extension: csv
+
+  locale: en-US
+
+spring:
+  messages:
+    basename: bundle
