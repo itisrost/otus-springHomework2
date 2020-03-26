@@ -31,6 +31,5 @@ public class RegistrationServiceImplTest {
         Student student = registrationService.registerStudent();
         assertNotNull(student, "student is null");
         assertEquals(student.getName(), FREDDIE);
-
     }
 }

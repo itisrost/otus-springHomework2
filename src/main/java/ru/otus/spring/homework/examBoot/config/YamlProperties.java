@@ -1,6 +1,5 @@
 package ru.otus.spring.homework.examBoot.config;
 
-
 import lombok.Data;
 import ru.otus.spring.homework.examBoot.model.Filename;
 import org.springframework.boot.context.properties.ConfigurationProperties;
