@@ -27,16 +27,6 @@ public class LocalizationProperties {
         }
     }
 
-    public String getLocalizedFileName() {
-        StringBuilder stringBuilder = new StringBuilder(properties.getQuestionsFile().getName());
-        if (locale != Locale.getDefault()) {
-            stringBuilder.append("_").append(locale.toLanguageTag());
-        }
-        stringBuilder.append(".").append(properties.getQuestionsFile().getExtension());
-
-        return stringBuilder.toString();
-    }
-
     public List<String> getLocalizedFileNames() {
         StringBuilder localizedName = new StringBuilder(properties.getQuestionsFile().getName());
         localizedName.append("_")
