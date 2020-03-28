@@ -1,5 +1,6 @@
 package ru.otus.spring.homework.examBoot;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.junit.jupiter.api.DisplayName;
@@ -30,8 +31,8 @@ class QuestionsDaoImplTest {
 	@DisplayName("Тестируем метод getQuestions")
 	void getQuestionsTest() {
 
-		Mockito.when(localizedFileNameProvider.getLocalizedFileName())
-				.thenReturn("testQuestions.csv");
+		Mockito.when(localizedFileNameProvider.getLocalizedFileNames())
+				.thenReturn(Collections.singletonList("testQuestions.csv"));
 
 		QuestionsDao questionsDao = new QuestionsDaoImpl(localizedFileNameProvider);
 

@@ -3,7 +3,7 @@ package ru.otus.spring.homework.examBoot.service;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
-import ru.otus.spring.homework.examBoot.config.YamlProperties;
+import ru.otus.spring.homework.examBoot.config.Properties;
 import ru.otus.spring.homework.examBoot.dao.QuestionsDao;
 import ru.otus.spring.homework.examBoot.model.Question;
 import ru.otus.spring.homework.examBoot.model.Student;
@@ -12,13 +12,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class ExamServiceImpl implements ExamService {
 
-    private final YamlProperties yamlProperties;
+    private final Properties yamlProperties;
     private final QuestionsDao questionsDao;
     private final RegistrationService registrationService;
     private final InputOutputService inputOutputService;
     private Student student;
 
-    public ExamServiceImpl(YamlProperties yamlProperties,
+    public ExamServiceImpl(Properties yamlProperties,
                            QuestionsDao questionsDao,
                            RegistrationService registrationService,
                            InputOutputService inputOutputService) {

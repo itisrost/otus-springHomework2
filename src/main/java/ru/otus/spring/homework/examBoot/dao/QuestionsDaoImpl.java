@@ -22,7 +22,7 @@ public class QuestionsDaoImpl implements QuestionsDao {
     public List<Question> getQuestions() {
         List<Question> result = new ArrayList<>();
 
-        try (Scanner scanner = new Scanner(getFileFromResources(localizationProperties.getLocalizedFileName()))) {
+        try (Scanner scanner = new Scanner(getFileFromResources(localizationProperties.getLocalizedFileNames()))) {
             while (scanner.hasNextLine()) {
                 result.add(getQuestionFromLine(scanner.nextLine(), ";"));
             }
@@ -33,15 +33,15 @@ public class QuestionsDaoImpl implements QuestionsDao {
         return result;
     }
 
-    private File getFileFromResources(String fileName) {
+    private File getFileFromResources(List<String> fileNames) {
         ClassLoader classLoader = getClass().getClassLoader();
 
-        URL resource = classLoader.getResource(fileName);
+        URL resource = classLoader.getResource(fileNames.get(0));
         if (resource == null) {
-            throw new IllegalArgumentException("file is not found!");
-        } else {
-            return new File(resource.getFile());
+            resource = classLoader.getResource(fileNames.get(1));
         }
+
+        return new File(resource.getFile());
     }
 
     private static Question getQuestionFromLine(String line, String delimeter) {
